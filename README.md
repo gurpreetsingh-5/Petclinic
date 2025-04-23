@@ -19,6 +19,8 @@ sudo wget https://archive.apache.org/dist/tomcat/tomcat-11/v11.0.0-M26/bin/apach
 #OR
 sudo wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.65/bin/apache-tomcat-9.0.65.tar.gz
 sudo tar -xvf apache-tomcat-9.0.65.tar.gz
+cd /opt
+sudo chown -R ubuntu apache-tomcat-9.0.65
 ```
 ```
 cd /opt/apache-tomcat-9.0.65/conf
@@ -47,6 +49,17 @@ comment:
 ```
 sudo stopTomcat
 sudo startTomcat
+ipaddress/localhost:8080
+
+```
+
+```
+cd /home/ubuntu
+git clone https://github.com/gurpreetsingh-5/Petclinic.git
+mvn clean package
+cp /home/ubuntu/Petclinic/target/petclinic.war /opt/apache-tomcat-9.0.65/webapps/
+ipaddress/localhost:8080/petclinic
+
 ```
 
 # Modified By DevOps Shack  https://www.youtube.com/@devopsshack
